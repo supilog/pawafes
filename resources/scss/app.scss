@@ -1,0 +1,104 @@
+/**
+fonts
+ */
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+.potta-one-regular {
+    font-family: "Potta One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/**
+colors
+ */
+$color-gray: #bbb;
+$color-blue: #BFE6E1;
+$color-green: #1B9284;
+$color-yellow: #DB9846;
+$color-red: #E1393D;
+
+/**
+common
+ */
+header {
+    h1 {
+        text-align: center;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+footer {
+    .copyright {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}
+
+/**
+pawafes
+ */
+
+.notes {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pfentrance {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &:hover {
+        font-weight: bold;
+        //color: rgb(250, 0, 6, 0.7);
+        color: #000;
+        background-color: rgb(251, 186, 21, 0.7);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    }
+}
+
+.btnlist {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.search {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.pawafesnum {
+    text-align: right;
+}
+
+.player {
+    &.founded{
+        background-color: $color-gray;
+    }
+
+    &:hover {
+        background-color: $color-blue;
+        opacity: 0.7;
+    }
+
+    .player-image {
+        padding-left: 0rem;
+    }
+
+    .player-info {
+        padding-left: 0rem;
+        font-size: 0.85rem;
+
+        .name {
+            .no {
+                color: $color-red;
+                font-weight: bold;
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
