@@ -7,7 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/reset.css',
                 'resources/scss/app.scss',
-                'resources/js/app.js'
+                'resources/js/app.js',
+                'resources/js/pagetop.js'
             ],
             refresh: true,
         }),
