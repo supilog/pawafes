@@ -30,7 +30,9 @@ class PawafesController extends Controller
                 'condition' => $count_condition
             ],
             'current' => url()->full(),
-            'players' => $players
+            'players' => $players,
+            'sw' => $sw,
+            'position' => $position
         ];
 
         return view('list', $data);

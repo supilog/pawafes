@@ -19,6 +19,23 @@ $color-yellow: #DB9846;
 $color-red: #E1393D;
 
 /**
+breakpoints
+ */
+$breakpoints: (
+    'sm': 'screen and (min-width: 576px)',
+    'md': 'screen and (min-width: 768px)',
+    'lg': 'screen and (min-width: 992px)',
+    'xl': 'screen and (min-width: 1200px)',
+    'xxl': 'screen and (min-width: 1400px)',
+) !default;
+
+@mixin media($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/**
 common
  */
 header {
@@ -64,6 +81,11 @@ pawafes
 .btnlist {
     display: flex;
     margin-bottom: 1rem;
+    .positionbtn {
+        &.selected{
+            background-color:$color-gray;
+        }
+    }
 }
 
 .search {
@@ -76,7 +98,7 @@ pawafes
 }
 
 .player {
-    &.founded{
+    &.founded {
         background-color: $color-gray;
     }
 
@@ -87,6 +109,27 @@ pawafes
 
     .player-image {
         padding-left: 0rem;
+
+        img {
+            display: block;
+            object-fit: cover;
+            height: 110px;
+            @include media(xxl) {
+                height: 98px;
+            }
+            @include media(xl) {
+                height: 83px;
+            }
+            @include media(lg) {
+                height: 83px;
+            }
+            @include media(md) {
+                height: 110px;
+            }
+            @include media(sm) {
+                height: 110px;
+            }
+        }
     }
 
     .player-info {

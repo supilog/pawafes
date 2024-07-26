@@ -2,37 +2,37 @@
 
 @section('content')
     <div class="btnlist justify-content-center">
-        <div class="">
+        <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 1) }}">
                 <img src="{{ asset('img/position/pitcher.png') }}">
             </a>
         </div>
-        <div class="">
+        <div class="positionbtn @if($position == 2)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 2) }}">
                 <img src="{{ asset('img/position/catcher.png') }}">
             </a>
         </div>
-        <div class="">
+        <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 3) }}">
                 <img src="{{ asset('img/position/first.png') }}">
             </a>
         </div>
-        <div class="">
+        <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 4) }}">
                 <img src="{{ asset('img/position/second.png') }}">
             </a>
         </div>
-        <div class="">
+        <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 5) }}">
                 <img src="{{ asset('img/position/third.png') }}">
             </a>
         </div>
-        <div class="">
+        <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 6) }}">
                 <img src="{{ asset('img/position/short.png') }}">
             </a>
         </div>
-        <div class="">
+        <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 7) }}">
                 <img src="{{ asset('img/position/outfielder.png') }}">
             </a>
@@ -44,7 +44,7 @@
             <form method="get" action="{{ route('list') }}">
                 <div class="input-group">
                     <input class="form-control" type="text" name="s" placeholder="検索"
-                           aria-label="default input example">
+                           aria-label="default input example" value="{{ $sw }}">
                 </div>
             </form>
         </div>
