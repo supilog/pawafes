@@ -38,9 +38,22 @@ $breakpoints: (
 /**
 common
  */
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     h1 {
         text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 3rem;
+        @include media(md) {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
 
         a {
             text-decoration: none;
@@ -53,6 +66,40 @@ footer {
         font-size: 0.7rem;
         text-align: center;
     }
+}
+
+.pagetop {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0;
+}
+
+.pagetop a {
+    display: block;
+    background-color: #ccc;
+    text-align: center;
+    color: #222;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.pagetop a:hover {
+    display: block;
+    background-color: #b2d1fb;
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
 }
 
 /**
@@ -81,9 +128,10 @@ pawafes
 .btnlist {
     display: flex;
     margin-bottom: 1rem;
+
     .positionbtn {
-        &.selected{
-            background-color:$color-gray;
+        &.selected {
+            background-color: $color-gray;
         }
     }
 }
@@ -137,6 +185,11 @@ pawafes
         font-size: 0.85rem;
 
         .name {
+            font-size: 1.2rem;
+            @include media(md) {
+                font-size: 0.9rem;
+            }
+
             .no {
                 color: $color-red;
                 font-weight: bold;
