@@ -16,7 +16,7 @@
 <div class="container mb-2">
     <div class="entrance">
         <a href="{{ route('list') }}">
-            <button type="button" class="btn btn-outline-secondary pfentrance"><i class="fi-arrow-right"></i>&nbsp;パワフェス図鑑埋め用メモ&nbsp;<i class="fi-arrow-left"></i></button>
+            <button type="button" class="pfentrance"><i class="fi-arrow-right"></i>&nbsp;パワフェス図鑑埋め用メモ&nbsp;<i class="fi-arrow-left"></i></button>
         </a>
     </div>
     <div class="notes">

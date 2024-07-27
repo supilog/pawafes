@@ -36,5 +36,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 @vite(['resources/js/app.js'])
 @vite(['resources/js/pagetop.js'])
+@vite(['resources/js/form.js'])
 </body>
 </html>

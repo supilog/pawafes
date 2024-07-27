@@ -16,7 +16,8 @@ class PawafesListRequest extends FormRequest
     {
         return [
             's' => 'min:1',
-            'p' => 'numeric|min:1|max:7'
+            'p' => 'numeric|min:0|max:7',
+            'a' => 'numeric|min:0|max:10',
         ];
     }
 }
