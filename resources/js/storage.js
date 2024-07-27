@@ -3,7 +3,6 @@ $(function () {
     var cleanbtn = $('#storage-clean');
     var renewal = $('#renewal');
     cleanbtn.click(function(){
-        localStorage.removeItem(lskey);
         $.removeCookie(lskey, { path: '/' });
     });
 
