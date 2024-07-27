@@ -21,7 +21,13 @@
     </div>
     <div class="notes">
         <div>
-            【注意】
+            【注意1】
+        </div>
+        <div>
+            獲得選手記録をCookieに保存しているので、Cookieを無効にした状態では使用することができません。<br>
+        </div>
+        <div>
+            【注意2】
         </div>
         <div>
             本アプリはゲームエイト様の選手図鑑データ(<a href="https://game8.jp/pawapuro2024-2025/625623">https://game8.jp/pawapuro2024-2025/625623</a>)を参考にしており、<br>
@@ -36,9 +42,6 @@
     <div class="copyright">
         <span class="potta-one-regular">Copyright @Supi</span>
     </div>
-{{--    <div>--}}
-{{--        <a href="#" id="renewal">リニューアル</a>--}}
-{{--    </div>--}}
 </footer>
 <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
