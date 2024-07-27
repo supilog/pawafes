@@ -162,6 +162,7 @@ pawafes
         border-radius: 0.375rem;
         border: 1px solid $color-button;
         background-color: transparent;
+        color: #000;
 
         &:hover {
             @include media(lg) {
