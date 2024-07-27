@@ -12,6 +12,8 @@ fonts
 /**
 colors
  */
+$color-white: #fff;
+$color-black: #000;
 $color-gray: #bbb;
 $color-blue: #BFE6E1;
 $color-green: #1B9284;
@@ -110,16 +112,16 @@ footer {
     padding: 0.6rem 0.75rem;
     border-radius: 0.375rem;
     background-color: #dc3545;
-    color: #fff;
+    color: $color-white;
     @include media(lg) {
-        background-color: #fff;
-        color: #000;
+        background-color: $color-white;
+        color: $color-black;
     }
 
     &:hover {
         @include media(lg) {
             background-color: #dc3545;
-            color: #fff;
+            color: $color-white;
         }
     }
 
@@ -131,7 +133,9 @@ footer {
 /**
 pawafes
  */
-
+#search-condition {
+    display:none;
+}
 
 .notes {
     font-size: 0.85rem;
@@ -148,10 +152,10 @@ pawafes
     text-align: center;
 
     a {
-        color: #000;
+        color: $color-black;
 
         &:visited {
-            color: #000;
+            color: $color-black;
         }
     }
 
@@ -162,11 +166,11 @@ pawafes
         border-radius: 0.375rem;
         border: 1px solid $color-button;
         background-color: transparent;
-        color: #000;
+        color: $color-black;
 
         &:hover {
             @include media(lg) {
-                color: #fff;
+                color: $color-white;
                 background-color: #8C8C8C;
                 box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
             }
@@ -174,15 +178,46 @@ pawafes
     }
 }
 
-.btnlist {
+.positionlist {
     display: flex;
     margin-bottom: 1rem;
     justify-content: center !important;
 
     .positionbtn {
+        background-color: $color-black;
+
         &.selected {
-            background-color: $color-gray;
+            opacity: 0.7;
         }
+    }
+}
+
+.arealist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    margin: 1rem calc(-.5 * var(--bs-gutter-x));
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    .center {
+        width: 100%;
+        @include media(lg) {
+            width: 33.33%;
+        }
+
+        input-group {
+            select {
+                width:100%;
+            }
+        }
+    }
+
+    @include media(lg) {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

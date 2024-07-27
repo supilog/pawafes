@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PawafesListRequest;
 use App\Libs\PawafesLib;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PawafesController extends Controller
 {
@@ -20,10 +21,12 @@ class PawafesController extends Controller
 
     public function list(PawafesListRequest $request)
     {
-        $sw = $request->s;
-        $position = $request->p;
+        $sw = $request->sw;
+        $position = !empty($request->p) ? $request->p : 0;
+        $area = !empty($request->a) ? $request->a : 0;
+        Log::info($sw . " " . $position . " " . $area);
 
-        list($players, $count_condition) = $this->pfl->getPlayers($sw, $position);
+        list($players, $count_condition) = $this->pfl->getPlayers($sw, $position, $area);
         $data = [
             'count' => [
                 'all' => $this->pfl->getPlayersCountAll(),
@@ -31,6 +34,7 @@ class PawafesController extends Controller
             ],
             'current' => url()->full(),
             'players' => $players,
+            'area' => $area,
             'sw' => $sw,
             'position' => $position
         ];
