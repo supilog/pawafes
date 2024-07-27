@@ -143,9 +143,15 @@ pawafes
 
 .entrance {
     text-align: center;
-    a{
+
+    a {
         color: #000;
+
+        &:visited {
+            color: #000;
+        }
     }
+
     .pfentrance {
         margin-top: 1rem;
         margin-bottom: 1rem;
