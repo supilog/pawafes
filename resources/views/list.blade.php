@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="btnlist justify-content-center">
+    <div class="btnlist">
         <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 1) }}">
                 <img src="{{ asset('img/position/pitcher.png') }}">
@@ -38,9 +38,8 @@
             </a>
         </div>
     </div>
-    <div class="search row justify-content-center">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+    <div class="search">
+        <div class="center">
             <form method="get" action="{{ route('list') }}">
                 <div class="input-group">
                     <input class="form-control" type="text" name="s" placeholder="検索"
@@ -48,22 +47,22 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-4 pawafesnum">
-            <span><span class="count_founded">0</span>人</span> / <span>全{{ $count['all'] }}人</span>
-        </div>
+    </div>
+    <div class="pawafesnum">
+        <span class="count_founded">0</span><span>人</span> / <span>全{{ $count['all'] }}人</span>
     </div>
     <div class="row">
         @foreach($players as $player)
-            <div class="col-md-3 mb-3 player pawafes{{ $player->no }}" data-playerno="{{ $player->no }}">
-                <div class="row shadow">
-                    <div class="col-4 player-image">
+            <div class="col-md-3 mb-3 player">
+                <div class="player-wrap pawafes{{ $player->no }} shadow" data-playerno="{{ $player->no }}">
+                    <div class="player-image">
                         @if(!empty($player->img))
                             <img src="{{ $player->img }}">
                         @else
                             <img src="{{ asset('img/who.png') }}">
                         @endif
                     </div>
-                    <div class="col-8 player-info">
+                    <div class="player-info">
                         <div class="name">
                             <span class="no">{{ $player->no }}</span>&nbsp;{{ $player->name }}&nbsp;
                         </div>

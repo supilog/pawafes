@@ -8,7 +8,9 @@ export default defineConfig({
                 'resources/css/reset.css',
                 'resources/scss/app.scss',
                 'resources/js/app.js',
-                'resources/js/pagetop.js'
+                'resources/js/pagetop.js',
+                'resources/js/storage.js',
+                'resources/js/sticky-sum.js',
             ],
             refresh: true,
         }),
