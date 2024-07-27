@@ -138,7 +138,10 @@ pawafes
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: $color-red;
+
+    .red {
+        color: $color-red;
+    }
 }
 
 .entrance {
