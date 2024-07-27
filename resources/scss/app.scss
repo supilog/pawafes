@@ -17,6 +17,8 @@ $color-blue: #BFE6E1;
 $color-green: #1B9284;
 $color-yellow: #DB9846;
 $color-red: #E1393D;
+$color-button: #6c757d;
+$color-sticky: #81cf7a;
 
 /**
 breakpoints
@@ -48,7 +50,7 @@ header {
         margin-top: 1rem;
         margin-bottom: 1rem;
         font-size: 3rem;
-        @include media(md) {
+        @include media(lg) {
             margin-top: 1rem;
             margin-bottom: 1rem;
             font-size: 2rem;
@@ -91,9 +93,9 @@ footer {
 
 .pagetop a:hover {
     display: block;
-    background-color: #b2d1fb;
+    background-color: #ccc;
     text-align: center;
-    color: #fff;
+    color: #222;
     font-size: 2rem;
     text-decoration: none;
     padding: 10px 20px;
@@ -102,9 +104,34 @@ footer {
     opacity: 0.5;
 }
 
+.data-delete {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.375rem;
+    background-color: #dc3545;
+    color: #fff;
+    @include media(lg) {
+        background-color: #fff;
+        color: #000;
+    }
+
+    &:hover {
+        @include media(lg) {
+            background-color: #dc3545;
+            color: #fff;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
 /**
 pawafes
  */
+
 
 .notes {
     text-align: center;
@@ -112,22 +139,31 @@ pawafes
     margin-bottom: 2rem;
 }
 
-.pfentrance {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.entrance {
+    text-align: center;
 
-    &:hover {
-        font-weight: bold;
-        //color: rgb(250, 0, 6, 0.7);
-        color: #000;
-        background-color: rgb(251, 186, 21, 0.7);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    .pfentrance {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.6rem 0.75rem;
+        border-radius: 0.375rem;
+        border: 1px solid $color-button;
+        background-color: transparent;
+
+        &:hover {
+            @include media(lg) {
+                color: #fff;
+                background-color: #8C8C8C;
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+            }
+        }
     }
 }
 
 .btnlist {
     display: flex;
     margin-bottom: 1rem;
+    justify-content: center !important;
 
     .positionbtn {
         &.selected {
@@ -137,51 +173,82 @@ pawafes
 }
 
 .search {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    margin: 1rem calc(-.5 * var(--bs-gutter-x));
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include media(lg) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .center {
+        width: 100%;
+        @include media(lg) {
+            width: 33.33%;
+        }
+    }
+
 }
 
 .pawafesnum {
     text-align: right;
+    -webkit-position: sticky;
+    position: sticky;
+    padding: 0 0.4rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    top: 0;
+    left: 0;
+
+    &.sticky-color {
+        background-color: $color-sticky;
+        @include media(lg) {
+            background-color: transparent;
+        }
+    }
+
+    @include media(lg) {
+        position: relative;
+        margin-top: 0;
+        text-align: center;
+    }
 }
 
 .player {
-    &.founded {
-        background-color: $color-gray;
-    }
+    .player-wrap {
+        display: flex;
 
-    &:hover {
-        background-color: $color-blue;
-        opacity: 0.7;
-    }
+        &.founded {
+            background-color: $color-gray;
+        }
 
-    .player-image {
-        padding-left: 0rem;
-
-        img {
-            display: block;
-            object-fit: cover;
-            height: 110px;
-            @include media(xxl) {
-                height: 98px;
-            }
-            @include media(xl) {
-                height: 83px;
-            }
+        &:hover {
             @include media(lg) {
-                height: 83px;
-            }
-            @include media(md) {
-                height: 110px;
-            }
-            @include media(sm) {
-                height: 110px;
+                background-color: $color-blue;
+                opacity: 0.7;
             }
         }
     }
 
+    .player-image {
+        padding: 0;
+        width: 100px;
+        height: 100px;
+
+        img {
+            object-fit: cover;
+        }
+
+    }
+
     .player-info {
-        padding-left: 0rem;
+        padding-top: 0.1rem;
+        padding-left: 0.75rem;
         font-size: 0.85rem;
 
         .name {
