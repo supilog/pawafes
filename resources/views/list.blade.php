@@ -46,8 +46,8 @@
                     <option value="0" @if($area == 0)selected @endif>エリア選択なし</option>
                     <option value="1" @if($area == 1)selected @endif>初期</option>
                     <option value="2" @if($area == 2)selected @endif>スカウ島</option>
-                    <option value="3" @if($area == 3)selected @endif>東海岸</option>
                     <option value="4" @if($area == 4)selected @endif>試練の洞窟</option>
+                    <option value="3" @if($area == 3)selected @endif>東海岸</option>
                     <option value="5" @if($area == 5)selected @endif>ハナレ島</option>
                     <option value="6" @if($area == 6)selected @endif>空中庭園</option>
                     <option value="7" @if($area == 7)selected @endif>空中庭園空中マップ</option>
