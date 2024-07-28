@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="search-condition" data-sw="{{ $sw }}" data-position="{{ $position }}" data-area="{{ $area }}"></div>
+    <div id="search-condition" data-sw="{{ $sw }}" data-position="{{ $position }}" data-area="{{ $area }}" data-disp="0"></div>
     <div class="positionlist">
         <div class="positionbtn @if($position == 1)selected @endif">
             <a href="{{ PawafesHelper::getUrlForPosition($current, 1) }}">
@@ -70,8 +70,13 @@
             </form>
         </div>
     </div>
-    <div class="pawafesnum">
-        <span class="count_founded">0</span><span>人</span> / <span>全{{ $count['all'] }}人</span>
+    <div class="pawafesnum sticky-color justify-content-between">
+        <div class="crown">
+            <i id="switch-earned" class="step fi-crown"></i>
+        </div>
+        <div>
+            <span class="count_founded">0</span><span>人</span> / <span>全{{ $count['all'] }}人</span>
+        </div>
     </div>
     <div class="row">
         @foreach($players as $player)

@@ -42,6 +42,10 @@ $breakpoints: (
 /**
 common
  */
+.disp-none {
+    display: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -134,7 +138,7 @@ footer {
 pawafes
  */
 #search-condition {
-    display:none;
+    display: none;
 }
 
 .notes {
@@ -210,7 +214,7 @@ pawafes
 
         input-group {
             select {
-                width:100%;
+                width: 100%;
             }
         }
     }
@@ -245,14 +249,30 @@ pawafes
 }
 
 .pawafesnum {
+    display: flex;
+    justify-content: space-between;
     text-align: right;
     -webkit-position: sticky;
     position: sticky;
-    padding: 0 0.4rem;
-    font-size: 1.4rem;
+    padding: 0.4rem 0.4rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     top: 0;
     left: 0;
+
+    .crown {
+        margin-left: 1rem;
+
+        #switch-earned {
+            &.red {
+                color: $color-red;
+            }
+
+            &.green {
+                color: $color-green;
+            }
+        }
+    }
 
     &.sticky-color {
         background-color: $color-sticky;
