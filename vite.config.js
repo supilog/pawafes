@@ -10,8 +10,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/pagetop.js',
                 'resources/js/storage.js',
-                // 'resources/js/sticky-sum.js',
                 'resources/js/form.js',
+                'resources/js/switch-crown.js'
             ],
             refresh: true,
         }),
