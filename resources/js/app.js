@@ -2,6 +2,8 @@ $(function () {
     // ローカルストレージから、取得済み選手データを取得
     const lskey = 'pawafes';
     const selector_count = $('.count_founded');
+    const selector_count_left = $('.count_left');
+    const count_all = $('#search-condition').data('countall');
 
     // Cookieデータを配列にして取得
     var getPlayersData = function () {
@@ -19,6 +21,7 @@ $(function () {
         const players = JSON.parse($.cookie(lskey));
         // 取得済みカウントを更新
         selector_count.html(players.length);
+        selector_count_left.html(count_all - players.length);
         // クラス付与
         for (var i = 0; i < players.length; i++) {
             $('.pawafes' + players[i]).addClass("founded");
@@ -40,6 +43,7 @@ $(function () {
         savePlayerData(players)
         // 表示カウントアップ
         selector_count.html(parseInt(selector_count.html()) + 1);
+        selector_count_left.html(parseInt(selector_count_left.html()) - 1);
     };
     // ユーザー削除
     var removePlayer = function (no) {
@@ -51,6 +55,7 @@ $(function () {
         savePlayerData(players)
         // 表示カウントダウン
         selector_count.html(parseInt(selector_count.html()) - 1);
+        selector_count_left.html(parseInt(selector_count_left.html()) + 1);
     };
 
     $('.player-wrap').click(function () {
